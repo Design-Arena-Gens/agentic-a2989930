@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b1020" />
+  <title>Maze Runner</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div id="app">
+    <canvas id="game" aria-label="Maze Runner game canvas" role="img"></canvas>
+
+    <div id="hud" aria-live="polite">
+      <div class="score"><span id="score">0</span></div>
+      <div class="hiscore">HI <span id="hiscore">0</span></div>
+    </div>
+
+    <div id="start-screen" class="overlay show" role="dialog" aria-modal="true">
+      <div class="card">
+        <h1>Maze Runner</h1>
+        <p>Swipe or use arrow keys to dodge obstacles. Jump with ↑, Slide with ↓.</p>
+        <button id="start-btn" class="primary">Tap to Start</button>
+      </div>
+    </div>
+
+    <div id="gameover-screen" class="overlay" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="card">
+        <h2>Game Over</h2>
+        <p class="final-score">Score: <strong id="final-score">0</strong></p>
+        <p class="hi-score">Best: <strong id="best-score">0</strong></p>
+        <button id="retry-btn" class="primary">Retry</button>
+      </div>
+    </div>
+
+    <div id="controls" class="controls" aria-hidden="false">
+      <button id="btn-left" aria-label="Move left" class="ctrl">⟵</button>
+      <div class="vstack">
+        <button id="btn-up" aria-label="Jump" class="ctrl small">⟰</button>
+        <button id="btn-down" aria-label="Slide" class="ctrl small">⟱</button>
+      </div>
+      <button id="btn-right" aria-label="Move right" class="ctrl">⟶</button>
+    </div>
+  </div>
+
+  <script defer src="/game.js"></script>
+</body>
+</html>
